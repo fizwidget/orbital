@@ -1,0 +1,29 @@
+{
+  "name": "orbital",
+  "version": "1.0.0",
+  "description": "Simple 2D gravity simulator",
+  "main": "index.js",
+  "repository": "https://github.com/fizwidget/orbital.git",
+  "author": "James Russell <fizwidget@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.3",
+    "redux": "^3.6.0",
+    "reselect": "^2.5.4"
+  },
+  "devDependencies": {
+    "eslint": "^3.17.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.0",
+    "getstorybook": "^1.7.0",
+    "@kadira/storybook": "^2.5.2"
+  }
+}

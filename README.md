@@ -1,2 +1,2 @@
 # orbital
-Simple 2D gravity simulation
+Simple 2D gravity simulator
