@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 import { clockTick } from './actions';
 
-const framesPerSecond = 60;
+const framesPerSecond = 20;
 const frameRateInterval = 1000 / framesPerSecond;
 
 export default () =>
