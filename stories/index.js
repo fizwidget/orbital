@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
-import Example from './example';
+import App from '../src/app';
 
-storiesOf('Example')
-  .add('to Storybook', () => (
-    <Example />
+storiesOf('Solar system')
+  .add('with sample data', () => (
+    <App />
   ));
