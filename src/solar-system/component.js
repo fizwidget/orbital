@@ -1,14 +1,17 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
+import styled from 'styled-components';
 import Planet, { planetShape } from '../planet/component';
 import { planetsSelector } from './selectors';
 
+const Container = styled.div``;
+
 export const SolarSystem = ({ planets }) => (
-  <div>
-    {planets.map(({ id, x, y, radius }) =>
-      <Planet key={id} x={x} y={y} radius={radius} />,
+  <Container>
+    {planets.map(({ id, x, y, radius, color }) =>
+      <Planet key={id} x={x} y={y} radius={radius} color={color} />,
     )}
-  </div>
+  </Container>
 );
 
 SolarSystem.propTypes = {

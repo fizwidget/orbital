@@ -13,12 +13,10 @@ const forEachPair = (items, callback) => {
   );
 };
 
-const forceMultiplier = 1;
-
-const gravityReversalThreshold = 60;
+const forceMultiplier = 3;
 
 const calculateForce = (p1, p2, distance) => {
-  const isWithinRepulsionThreshold = distance < gravityReversalThreshold;
+  const isWithinRepulsionThreshold = distance < ((p1.radius + p2.radius) * 2);
   const force = (p1.radius * p2.radius * forceMultiplier) / (distance * distance);
   return isWithinRepulsionThreshold ? -force : force;
 };
@@ -26,7 +24,7 @@ const calculateForce = (p1, p2, distance) => {
 const minX = 0;
 const maxX = 600;
 const minY = 0;
-const maxY = 600;
+const maxY = 400;
 
 export default (planets) => {
   const newPlanets = planets.map(planet => ({ ...planet }));
