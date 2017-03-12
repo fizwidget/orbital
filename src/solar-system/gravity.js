@@ -1,3 +1,5 @@
+import { WIDTH, HEIGHT } from '../constants';
+
 const square = x => x * x;
 
 const distanceBetween = (p1, p2) =>
@@ -13,7 +15,8 @@ const forEachPair = (items, callback) => {
   );
 };
 
-const forceMultiplier = 3;
+const forceMultiplier = 0.3;
+const dragFactor = 1;
 
 const calculateForce = (p1, p2, distance) => {
   const isWithinRepulsionThreshold = distance < ((p1.radius + p2.radius) * 2);
@@ -22,9 +25,9 @@ const calculateForce = (p1, p2, distance) => {
 };
 
 const minX = 0;
-const maxX = 600;
+const maxX = WIDTH;
 const minY = 0;
-const maxY = 400;
+const maxY = HEIGHT;
 
 export default (planets) => {
   const newPlanets = planets.map(planet => ({ ...planet }));
@@ -37,10 +40,13 @@ export default (planets) => {
     p1.dx += deltaX; // eslint-disable-line
     p1.dy += deltaY; // eslint-disable-line
 
-    if (p1.x < minX || p1.x > maxX) {
+    p1.dx *= dragFactor;
+    p1.dy *= dragFactor;
+
+    if (p1.x < minX || p1.x + p1.radius > maxX) {
       p1.dx = -p1.dx;
     }
-    if (p1.y < minY || p1.y > maxY) {
+    if (p1.y < minY || p1.y + (p1.radius * 2) > maxY) {
       p1.dy = -p1.dy;
     }
 

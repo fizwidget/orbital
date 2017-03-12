@@ -20,7 +20,7 @@ const createPlanet = ({ x, y, dx = 0, dy = 0, radius = defaultRadius }) => {
   };
 };
 
-const distanceBetweenPlanets = 300;
+const distanceBetweenPlanets = 170;
 
 export const createGrid = () => {
   const planets = [];
